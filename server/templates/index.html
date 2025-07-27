@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form id="prediction-form">
+            <label for="area">Area (sqft):</label>
+            <input type="number" id="area" name="area" min="1" required>
+
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="number" id="bedrooms" name="bedrooms" min="1" max="10" value="1" required>
+
+            <label for="bathrooms">Bathrooms:</label>
+            <input type="number" id="bathrooms" name="bathrooms" min="1" max="10" value="1" required>
+
+            <label for="location">Location:</label>
+            <select id="location" name="location" required>
+                <option value="">Loading...</option>
+            </select>
+
+            <button type="submit">Predict Price</button>
+        </form>
+        <div id="result"></div>
+    </div>
+   <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
+
